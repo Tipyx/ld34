@@ -78,8 +78,9 @@ class Hero extends Sprite
 		
 		if (hxd.Key.isDown(hxd.Key.RIGHT)) {
 			if (dX == 0)
-				dX = 3;
-			dX += 0.2;
+				dX = 1;
+				//dX = 3;
+			dX += 0.15;
 			dX *= 0.98;
 		}
 		else
@@ -89,16 +90,9 @@ class Hero extends Sprite
 			if (t.isEnable
 			&&	wX + 0.25 * wid < t.x + t.wid
 			&&	wX + wid * 0.75 > t.x
-			&&	wY > t.y - t.hei
-			&&	wY < t.y) {
-				trace("trololo");
-			
-			
-			
-			//&&	wX < t.x + t.wid
-			//&&	wX + wid > t.x
-			//&&	wY - hei< t.y
-			//&&	wY > t.y - hei) {
+			&&	wY >= t.y - t.hei
+			&&	wY <= t.y) {
+				//trace("trololo");
 				t.isEnable = false;
 				dX = 0;
 			}

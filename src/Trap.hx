@@ -20,10 +20,10 @@ class Trap extends Sprite
 		super();
 		this.type = type;
 		
-		wid = 5;
+		wid = 10;
 		hei = 15;
 		
-		var bmp = new h2d.Bitmap(h2d.Tile.fromColor(0xFF0000, wid * 2, hei), this);
+		var bmp = new h2d.Bitmap(h2d.Tile.fromColor(0xFF0000, wid, hei), this);
 		bmp.y = -hei;
 		
 		isEnable = true;

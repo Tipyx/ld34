@@ -38,15 +38,21 @@ class Game extends h2d.Layers
 		
 		arRoom = [];
 		
-		//createRoom(0, 0, 1000, []);
-		//createRoom(400, 1, 1000);
-		
-		for (r in DCDB.roomData.all) {
-			var arTrap = [];
-			for (t in r.traps)
+		// TEST 1
+		var arTrap = [];
+			for (t in DCDB.roomData.get(DCDB.RoomDataKind.room1).traps)
 				arTrap.push(t);
-			createRoom(0, 0, r.width, arTrap);
-		}
+		createRoom(0, 0, 1000, arTrap);
+		createRoom(400, 1, 1000, arTrap);
+		createRoom(400, -1, 1000, arTrap);
+		
+		// TEST 2
+		//for (r in DCDB.roomData.all) {
+			//var arTrap = [];
+			//for (t in r.traps)
+				//arTrap.push(t);
+			//createRoom(0, 0, r.width, arTrap);
+		//}
 		
 		//createRoom(0, Std.int((Settings.STAGE_HEIGHT - Settings.HEI_ROOM) * 0.25), 1000, Settings.HEI_ROOM);
 		//createRoom(200, Std.int(arRoom[0].y + Settings.HEI_ROOM), 1000, Settings.HEI_ROOM);
