@@ -1,0 +1,93 @@
+{
+	"sheets": [
+		{
+			"name": "roomData",
+			"columns": [
+				{
+					"typeStr": "0",
+					"name": "id"
+				},
+				{
+					"typeStr": "3",
+					"name": "width",
+					"display": null
+				},
+				{
+					"typeStr": "8",
+					"name": "traps",
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"id": "room1",
+					"width": 1000,
+					"traps": [
+						{
+							"x": 200,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 400,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 600,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 800,
+							"trapType": [
+								0
+							]
+						}
+					]
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "roomData@traps",
+			"props": {
+				"hide": true
+			},
+			"separators": [],
+			"lines": [],
+			"columns": [
+				{
+					"typeStr": "3",
+					"name": "x",
+					"display": null
+				},
+				{
+					"typeStr": "9:TrapType",
+					"name": "trapType",
+					"display": null
+				}
+			]
+		}
+	],
+	"customTypes": [
+		{
+			"name": "TrapType",
+			"cases": [
+				{
+					"name": "TTBlocBot",
+					"args": []
+				},
+				{
+					"name": "TTBlocUp",
+					"args": []
+				}
+			]
+		}
+	],
+	"compress": false
+}

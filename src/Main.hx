@@ -51,6 +51,8 @@ class Main  extends hxd.App {
 	static function main() {
 		hxd.Res.initEmbed();
 		
+		DCDB.load(hxd.Res.data.entry.getBytes().toString());
+		
 		new Main();
 	}
 	

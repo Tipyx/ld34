@@ -24,10 +24,11 @@ class Hero extends Sprite
 	public var isCrounched			: Bool;
 	var counterCrounch				: Int;
 	
-	public var actualRoom		: Room;
+	public var actualRoom			: Room;
 	
 	// DEBUG
-	var bmp:h2d.Bitmap;
+	var bmp							: ASprite;
+	//var bmp							: h2d.Bitmap;
 
 	public function new() {
 		super();
@@ -38,12 +39,20 @@ class Hero extends Sprite
 		wX = wY = 0;
 		dX = dY = 0;
 		
-		bmp = new h2d.Bitmap(h2d.Tile.fromColor(0x0000FF, wid, hei), this);
-		bmp.y = -hei;
+		//bmp = new h2d.Bitmap(hxd.Res.player.toTile(), this);
+		
+		bmp = new ASprite(Settings.SLB, "player");
+		bmp.addBehaviour(0, "player", function () { return true; }, 0);
+		bmp.addBehaviour(1, "anim_player_run", function () { return dX != 0; }, 20);
+		this.addChild(bmp);
 		
 		isOnGround = true;
 		isDoubleJumpEnable = false;
 		isCrounched = false;
+		
+		//var bmpBox = new h2d.Graphics(this);
+		//bmpBox.beginFill(0xFF0000, 0.75);
+		//bmpBox.drawRect(0 , -hei, wid, hei);
 	}
 	
 	public function setActualRoom(newRoom:Room) {
@@ -62,14 +71,38 @@ class Hero extends Sprite
 	public function update() {
 	// PHYSIX
 		//X
+		//if (dX == 0)
+			//dX = 3;
+		//dX += 0.2;
+		//dX *= 0.98;
+		
 		if (hxd.Key.isDown(hxd.Key.RIGHT)) {
 			if (dX == 0)
-				dX = 5;
+				dX = 3;
 			dX += 0.2;
 			dX *= 0.98;
 		}
 		else
 			dX *= 0.80;
+		
+		for (t in actualRoom.arTrap) {
+			if (t.isEnable
+			&&	wX + 0.25 * wid < t.x + t.wid
+			&&	wX + wid * 0.75 > t.x
+			&&	wY > t.y - t.hei
+			&&	wY < t.y) {
+				trace("trololo");
+			
+			
+			
+			//&&	wX < t.x + t.wid
+			//&&	wX + wid > t.x
+			//&&	wY - hei< t.y
+			//&&	wY > t.y - hei) {
+				t.isEnable = false;
+				dX = 0;
+			}
+		}
 		
 		if (dX < 0.05)
 			dX = 0;
@@ -85,7 +118,7 @@ class Hero extends Sprite
 		if (hxd.Key.isPressed(hxd.Key.UP) && (isOnGround || isDoubleJumpEnable)) {
 			if (!isOnGround)
 				isDoubleJumpEnable = false;
-			dY = -10;
+			dY = -8;
 		}
 		else if (isOnGround && hxd.Key.isPressed(hxd.Key.DOWN)) {
 			var roomUnder = Tools.IS_ROOM_UNDER_HERO();
@@ -107,7 +140,8 @@ class Hero extends Sprite
 				isCrounched = false;
 		}
 		
-		dY += 1.2;
+		dY += 1;
+		//dY += 1.2;
 		if (dY > 0)
 			dY *= 0.90;
 		else
@@ -125,6 +159,7 @@ class Hero extends Sprite
 			isDoubleJumpEnable = false;
 		}
 		else if (wY + dY < 0  && roomAbove != null) { // CHANGE FLOOR UP
+		//if (wY + dY < 0  && roomAbove != null) { // CHANGE FLOOR UP
 			setCoord(Std.int(wX + (actualRoom.x - roomAbove.x)), Std.int(wY + (actualRoom.y - roomAbove.y)));
 			roomAbove.load(this);
 			wY += dY;
@@ -140,10 +175,12 @@ class Hero extends Sprite
 			isOnGround = false;
 		}
 		
+		bmp.setGeneralSpeed(25 * (dX / 9));
+		if (bmp.speed < 10)
+			bmp.setGeneralSpeed(10);
 		bmp.scaleY = isCrounched ? 0.5 : 1;
-		bmp.y = -hei * bmp.scaleY;
-		
-		trace(dX);
+		bmp.y = -hei * bmp.scaleY - 5;
+		bmp.update();
 		
 		this.x = wX;
 		this.y = wY;
