@@ -9,8 +9,7 @@
 				},
 				{
 					"typeStr": "3",
-					"name": "width",
-					"display": null
+					"name": "widTile"
 				},
 				{
 					"typeStr": "8",
@@ -20,11 +19,136 @@
 			],
 			"lines": [
 				{
+					"id": "first",
+					"traps": [],
+					"widTile": 10
+				},
+				{
+					"id": "tuto1",
+					"traps": [
+						{
+							"x": 800,
+							"trapType": [
+								1
+							]
+						},
+						{
+							"x": 1000,
+							"trapType": [
+								1
+							]
+						},
+						{
+							"x": 1200,
+							"trapType": [
+								1
+							]
+						},
+						{
+							"x": 1400,
+							"trapType": [
+								1
+							]
+						}
+					],
+					"widTile": 12
+				},
+				{
+					"id": "tuto2",
+					"widTile": 12,
+					"traps": [
+						{
+							"x": 800,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 1000,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 1200,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 1400,
+							"trapType": [
+								0
+							]
+						}
+					]
+				},
+				{
+					"id": "tuto3",
+					"widTile": 12,
+					"traps": [
+						{
+							"x": 800,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 1000,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 1200,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 1400,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 1600,
+							"trapType": [
+								4
+							]
+						}
+					]
+				},
+				{
+					"id": "debug",
+					"widTile": 12,
+					"traps": [
+						{
+							"x": 2000,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 400,
+							"trapType": [
+								2
+							]
+						}
+					]
+				},
+				{
 					"id": "room1",
-					"width": 1000,
+					"widTile": 4,
 					"traps": [
 						{
 							"x": 200,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 300,
 							"trapType": [
 								0
 							]
@@ -36,7 +160,127 @@
 							]
 						},
 						{
+							"x": 500,
+							"trapType": [
+								0
+							]
+						},
+						{
 							"x": 600,
+							"trapType": [
+								1
+							]
+						}
+					]
+				},
+				{
+					"id": "room2",
+					"widTile": 6,
+					"traps": [
+						{
+							"x": 300,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 500,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 700,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 900,
+							"trapType": [
+								2
+							]
+						}
+					]
+				},
+				{
+					"id": "room3",
+					"widTile": 4,
+					"traps": [
+						{
+							"x": 100,
+							"trapType": [
+								4
+							]
+						},
+						{
+							"x": 200,
+							"trapType": [
+								4
+							]
+						},
+						{
+							"x": 300,
+							"trapType": [
+								4
+							]
+						},
+						{
+							"x": 400,
+							"trapType": [
+								4
+							]
+						},
+						{
+							"x": 500,
+							"trapType": [
+								4
+							]
+						},
+						{
+							"x": 600,
+							"trapType": [
+								4
+							]
+						},
+						{
+							"x": 700,
+							"trapType": [
+								4
+							]
+						}
+					]
+				},
+				{
+					"id": "room4",
+					"widTile": 5,
+					"traps": [
+						{
+							"x": 200,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 300,
+							"trapType": [
+								1
+							]
+						},
+						{
+							"x": 500,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 600,
+							"trapType": [
+								1
+							]
+						},
+						{
+							"x": 700,
 							"trapType": [
 								0
 							]
@@ -44,13 +288,225 @@
 						{
 							"x": 800,
 							"trapType": [
+								1
+							]
+						}
+					]
+				},
+				{
+					"id": "room5",
+					"widTile": 8,
+					"traps": [
+						{
+							"x": 300,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 400,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 500,
+							"trapType": [
+								1
+							]
+						},
+						{
+							"x": 600,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 700,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 1000,
+							"trapType": [
+								4
+							]
+						},
+						{
+							"x": 1200,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 1300,
+							"trapType": [
+								1
+							]
+						},
+						{
+							"x": 1400,
+							"trapType": [
+								2
+							]
+						}
+					]
+				},
+				{
+					"id": "room6",
+					"widTile": 4,
+					"traps": [
+						{
+							"x": 200,
+							"trapType": [
 								0
+							]
+						},
+						{
+							"x": 300,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 500,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 600,
+							"trapType": [
+								3
+							]
+						}
+					]
+				},
+				{
+					"id": "room7",
+					"widTile": 7,
+					"traps": [
+						{
+							"x": 200,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 300,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 500,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 600,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 800,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 900,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 1000,
+							"trapType": [
+								0
+							]
+						},
+						{
+							"x": 1100,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 1200,
+							"trapType": [
+								0
+							]
+						}
+					]
+				},
+				{
+					"id": "room8",
+					"widTile": 6,
+					"traps": [
+						{
+							"x": 200,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 300,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 400,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 500,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 600,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 700,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 800,
+							"trapType": [
+								3
+							]
+						},
+						{
+							"x": 900,
+							"trapType": [
+								2
+							]
+						},
+						{
+							"x": 1000,
+							"trapType": [
+								4
 							]
 						}
 					]
 				}
 			],
-			"separators": [],
+			"separators": [
+				5
+			],
 			"props": {}
 		},
 		{
@@ -83,7 +539,19 @@
 					"args": []
 				},
 				{
-					"name": "TTBlocUp",
+					"name": "TTBlocTop",
+					"args": []
+				},
+				{
+					"name": "TTPlantBot",
+					"args": []
+				},
+				{
+					"name": "TTPlantTop",
+					"args": []
+				},
+				{
+					"name": "TTPlantBoth",
 					"args": []
 				}
 			]
